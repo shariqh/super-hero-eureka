@@ -27,3 +27,16 @@ dependencyManagement {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
 }
+
+
+bootRun {
+	systemProperty 'spring.profiles.active', 'local'
+
+	// could also use the following line:
+	// args = ["--spring.profiles.active=local"]
+}
+
+test {
+	// cannot use "args" like in bootRun
+	systemProperty 'spring.profiles.active', 'test'
+}
