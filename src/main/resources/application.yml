@@ -1,0 +1,9 @@
+spring:
+  profiles: cloud
+
+---
+spring:
+  profiles: test, local
+server:
+  port: 8082
+
